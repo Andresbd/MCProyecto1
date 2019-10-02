@@ -7,12 +7,12 @@ public class Main {
 
         MetodosCuadrados MC = new MetodosCuadrados();
 
-        result = MC.GenerarMC(3708);
+        result = MC.GenerarMC(3547);
         System.out.println(result);
 
-        for(int i = 0; i < 7; i++) {
+        for(int i = 1; i < 7; i++) {
             result = MC.GenerarMC(result);
-             System.out.println(result);
+             System.out.println("Iteración " + i + ": "+result);
         }
     }
 }

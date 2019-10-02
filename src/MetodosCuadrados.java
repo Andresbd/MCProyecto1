@@ -1,15 +1,14 @@
 public class MetodosCuadrados {
 
-    int semilla;
-    String generado;
-    String semStr;
-
     public int GenerarMC (int semilla) {
+
         int semCua;
+        String generado;
+        String semStr;
         int longNum;
         int longSem;
 
-        semCua = semilla * semilla;
+        semCua = (int) Math.pow(semilla, 2);
         generado = Integer.toString(semCua);
         semStr = Integer.toString(semilla);
         longNum = generado.length();
@@ -19,7 +18,7 @@ public class MetodosCuadrados {
             int fixed;
             StringBuilder sb = new StringBuilder(generado);
             if(longNum < 4){
-                for(int i = longNum; i < 4; i++){
+                for(double i = longNum; i < 4; i++){
                     sb.insert(0, '0');
                 }
                 generado = sb.toString();
@@ -27,20 +26,13 @@ public class MetodosCuadrados {
                 return fixed;
             }else {
                 //En caso de tener un numero mayor a 4 digitos, procedemos a recortar valores
-                int size = longNum - longSem;
-                int half = size/2;
-                sb.delete(0, half);
+                String newNumber;
+                double size = longNum - longSem;
+                double remove = Math.ceil(size/2);
+                int crop = longNum - (int) remove;
+                newNumber = sb.substring(crop-4, crop);
 
-                int newSize = sb.length();
-                
-                //En caso de tener 5 digitos, quitamos el primero y conservamos los siguientes 4
-                if(newSize > 4) {
-                    
-                    sb.delete(newSize-half-1, newSize);
-                }
-
-                generado = sb.toString();
-                fixed = Integer.parseInt(generado);
+                fixed = Integer.parseInt(newNumber);
                 return fixed;
             }
         }else {
