@@ -8,7 +8,7 @@ public class Main {
         MetodosCuadrados MC = new MetodosCuadrados();
 
         result = MC.GenerarMC(3547);
-        System.out.println(result);
+        System.out.println("Iteración 0: "+result);
 
         for(int i = 1; i < 7; i++) {
             result = MC.GenerarMC(result);
