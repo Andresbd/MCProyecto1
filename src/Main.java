@@ -6,6 +6,7 @@ public class Main {
     int result;
 
         MetodosCuadrados MC = new MetodosCuadrados();
+        GeneradorMultiplicativo GM = new GeneradorMultiplicativo();
 
         result = MC.GenerarMC(3547);
         System.out.println("Iteración 0: "+result);
