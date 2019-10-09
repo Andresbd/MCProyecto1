@@ -1,7 +1,11 @@
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
-    // write your code here
+
 
         int result;
 
@@ -17,10 +21,11 @@ public class Main {
              System.out.println("Iteración " + i + ": "+result);
         }
 
-        int[] aux = CM.GenMix(37, 9, 29, 100, 10 );
+        ArrayList aux = CM.GenMix(37, 9, 29, 100, 10 );
 
-        for (int i = 0; i<aux.length; i++){
-            System.out.println(aux[i]);
+        for (int i = 0; i<aux.size(); i++){
+            System.out.println(aux.get(i));
         }
+
     }
 }

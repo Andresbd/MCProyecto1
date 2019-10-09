@@ -1,16 +1,19 @@
 import java.util.ArrayList;
 
-public class CongruencialMixto {
-    public int[] GenMix(int X0, int a, int c, int m, int n){
+class CongruencialMixto {
+    public ArrayList GenMix(int X0, int a, int c, int m, int n){
         int[] aux = new int[n];
+        ArrayList list = new ArrayList();
 
         int result = X0;
         for (int i = 0; i < n; i++){
             aux[i] = GenMix(result, a, c, m);
             result = aux[i];
+
+            list.add(aux[i]);
         }
 
-        return aux;
+        return list;
     }
 
     public int GenMix(int X0, int a, int c, int m){
