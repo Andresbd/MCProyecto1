@@ -1,9 +1,9 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class MetodosCuadrados {
 
     public ArrayList MCAleatorio = new ArrayList<>();
-    public ArrayList MCRandomRi = new ArrayList<>();
+    public ArrayList<Float> MCRandomRi = new ArrayList<Float>();
 
     public void GenerarMC (int semilla, int iterations) {
 

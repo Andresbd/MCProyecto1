@@ -1,9 +1,9 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class CongruencialLineal {
 
     public ArrayList CLAleatorio = new ArrayList<>();
-    public ArrayList CLRandomRi = new ArrayList<>();
+    public ArrayList<Float> CLRandomRi = new ArrayList<Float>();
 
     public void CongLineal(float sem, float mult, float inc, float modul, float iterations) {
 

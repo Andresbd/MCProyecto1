@@ -7,6 +7,7 @@ public class Main {
         GeneradorMultiplicativo GM = new GeneradorMultiplicativo();
         CongruencialMixto CM = new CongruencialMixto();
         CongruencialLineal CL = new CongruencialLineal();
+        ChiCuadrada CH = new ChiCuadrada();
 
         MC.GenerarMC(3708, 8);
         
@@ -27,5 +28,7 @@ public class Main {
             System.out.println("Aleatorio: "+CL.CLAleatorio.get(y));
             System.out.println("RI: "+CL.CLRandomRi.get(y));
         }
+
+        CH.ChiTest(MC.MCRandomRi);
     }
 }
