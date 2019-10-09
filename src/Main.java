@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,10 +18,10 @@ public class Main {
             System.out.println("RI: "+MC.MCRandomRi.get(x));
         }
 
-        int[] aux = CM.GenMix(4, 5, 7, 8, 7);
+        ArrayList aux = CM.GenMix(4, 5, 7, 8, 7);
 
-        for (int i = 0; i<aux.length; i++){
-            System.out.println(aux[i]);
+        for (int i = 0; i<aux.size(); i++){
+            System.out.println(aux.get(i));
         }
 
         CL.CongLineal(4, 5, 7, 8, 5);
