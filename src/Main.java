@@ -1,31 +1,34 @@
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
-
-
-        int result;
+    // write your code here
 
         MetodosCuadrados MC = new MetodosCuadrados();
         GeneradorMultiplicativo GM = new GeneradorMultiplicativo();
         CongruencialMixto CM = new CongruencialMixto();
+        CongruencialLineal CL = new CongruencialLineal();
+        ChiCuadrada CH = new ChiCuadrada();
 
-        result = MC.GenerarMC(3547);
-        System.out.println("Iteración 0: "+result);
-
-        for(int i = 1; i < 7; i++) {
-            result = MC.GenerarMC(result);
-             System.out.println("Iteración " + i + ": "+result);
+        MC.GenerarMC(3708, 8);
+        
+        for(int x = 0; x < MC.MCAleatorio.size(); x++) {
+            System.out.println("Aleatorio: "+MC.MCAleatorio.get(x));
+            System.out.println("RI: "+MC.MCRandomRi.get(x));
         }
 
-        ArrayList aux = CM.GenMix(37, 9, 29, 100, 10 );
+        int[] aux = CM.GenMix(4, 5, 7, 8, 7);
 
-        for (int i = 0; i<aux.size(); i++){
-            System.out.println(aux.get(i));
+        for (int i = 0; i<aux.length; i++){
+            System.out.println(aux[i]);
         }
 
+        CL.CongLineal(4, 5, 7, 8, 5);
+        
+        for(int y = 0; y < CL.CLAleatorio.size(); y++) {
+            System.out.println("Aleatorio: "+CL.CLAleatorio.get(y));
+            System.out.println("RI: "+CL.CLRandomRi.get(y));
+        }
+
+        CH.ChiTest(MC.MCRandomRi);
     }
 }
