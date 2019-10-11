@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30a2ea19-3cb3-444f-b072-2270006f1e66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Congruencial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/Congruencial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/CongruencialLineal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/CongruencialLineal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/CongruencialMixto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/CongruencialMixto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/GeneradorMultiplicativo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/GeneradorMultiplicativo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Kolmogorov.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/Kolmogorov.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/MetodosCuadrados.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/MetodosCuadrados.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CongruencialMixto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongruencialMixto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kolmogorov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kolmogorov.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+            <state relative-caret-position="357">
+              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ChiCuadrada.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,10 +36,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Kolmogorov.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CongruencialMixto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+            <state relative-caret-position="374">
+              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="method#first#0;class#CongruencialMixto#0" />
                 <element signature="method#third#0;class#CongruencialMixto#0" />
@@ -65,8 +75,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CongruencialMixto.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Kolmogorov.java" />
+        <option value="$PROJECT_DIR$/src/CongruencialMixto.java" />
       </list>
     </option>
   </component>
@@ -84,7 +95,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,13 +111,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570161049801" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570653043250" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -154,7 +165,8 @@
       <workItem from="1569522800006" duration="3000" />
       <workItem from="1570125489414" duration="9494000" />
       <workItem from="1570159734554" duration="1651000" />
-      <workItem from="1570641449843" duration="1291000" />
+      <workItem from="1570641449843" duration="2682000" />
+      <workItem from="1570805326257" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="Congruencial Mixto">
       <created>1570140490023</created>
@@ -163,17 +175,31 @@
       <option name="project" value="LOCAL" />
       <updated>1570140490023</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Congruencial Mixto modificado para que regrese ArrayList">
+      <created>1570645303169</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570645303169</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Conflicts solved">
+      <created>1570645417217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570645417217</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12436000" />
+    <option name="totallyTimeSpent" value="14138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.29403606" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29798657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -244,31 +270,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Congruencial Mixto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Congruencial Mixto" />
+    <MESSAGE value="Congruencial Mixto modificado para que regrese ArrayList" />
+    <MESSAGE value="Conflicts solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Conflicts solved" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ChiCuadrada.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Congruencial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Congruencial.java" />
     <entry file="file://$PROJECT_DIR$/src/CongruencialLineal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kolmogorov.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="13" selection-start-column="13" selection-end-column="13" />
@@ -289,26 +297,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CongruencialMixto.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChiCuadrada.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kolmogorov.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CongruencialMixto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="method#first#0;class#CongruencialMixto#0" />
             <element signature="method#third#0;class#CongruencialMixto#0" />
             <element signature="method#mcm#0;class#CongruencialMixto#0" />
             <element signature="method#mcd#0;class#CongruencialMixto#0" />
             <element signature="method#primeFactors#0;class#CongruencialMixto#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

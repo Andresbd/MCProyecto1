@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 class CongruencialMixto {
     public ArrayList GenMix(int X0, int a, int c, int m, int n){
-        int[] aux = new int[n];
+        float[] aux = new float[n];
         ArrayList list = new ArrayList();
 
-        int result = X0;
+        float result = X0;
         for (int i = 0; i < n; i++){
             aux[i] = GenMix(result, a, c, m);
             result = aux[i];
@@ -16,13 +16,13 @@ class CongruencialMixto {
         return list;
     }
 
-    public int GenMix(int X0, int a, int c, int m){
+    public float GenMix(float X0, int a, int c, int m){
         //if we meet the conditions we do the whole process, else we return -1
         if(checkConditions(a, c, m)){
-            int result = ((a * X0) + c) % m;
-            return result;
+            float result = ((a * X0) + c) % m;
+            return result/m;
         }
-        return -1;
+        return -1.0f;
     }
 
     //if conditions are true, it returns true
