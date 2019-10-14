@@ -1,14 +1,23 @@
+import org.apache.commons.math3.analysis.UnivariateFunction;
+import org.apache.commons.math3.analysis.integration.SimpsonIntegrator;
+import org.apache.commons.math3.analysis.integration.UnivariateIntegrator;
+
 import java.util.*;
 
 public class ChiCuadrada {
 
     int n;
-    double min, max, lambda, k, sum, median, interval;
+    double min, max, lambda, k, sum, median, interval, acumulated;
     double FA[];
     double FR[];
+    double FE[];
+    double PD[];
+
     ArrayList<Double> intervales = new ArrayList<Double>();
 
     public void ChiTest(ArrayList<Float> values) {
+
+        acumulated = 0;
 
         n = values.size();
         k = 1 + 3.222 * Math.log10(n);
@@ -27,13 +36,17 @@ public class ChiCuadrada {
         GenerateIntervals();
 
         AbsoluteRelative(values, intervales);
-        
+
+        FE = new double[FA.length];
+        PD = new double[FA.length];
+        Integration(intervales);
+
+        Product();
     }
 
     void GenerateIntervals() {
         double base = interval;
 
-        intervales.add(interval);
         while (interval < 1) {
             intervales.add(interval);
             interval += base;
@@ -61,6 +74,39 @@ public class ChiCuadrada {
 
         for(int z = 0; z < seccions.size(); z++){
             FR[z] = FA[z] / n;
+        }
+    }
+
+    void Integration(ArrayList<Double> values) {
+        UnivariateIntegrator integrator = new SimpsonIntegrator();
+
+        UnivariateFunction f = new UnivariateFunction() {
+            @Override
+            public double value(double x) {
+                return lambda * Math.exp(-lambda*x);
+            }
+        };
+
+        double start = 0;
+        double end = values.get(0);
+
+        for(int i = 0; i < values.size(); i++) {
+            FE[i] = integrator.integrate(100,f, start, end);
+            start = values.get(i);
+            if(i < 4) {
+                end = values.get(i+1);
+            }
+        }
+    }
+
+    void Product() {
+        double power;
+        double subs;
+        for (int j = 0; j < FA.length; j++) {
+            subs = (FR[j]-FE[j]);
+            power = Math.pow(subs,2);
+            PD[j] = power / FE[j];
+            acumulated += PD[j];
         }
     }
 }

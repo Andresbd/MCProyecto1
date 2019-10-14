@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6358472d-47e2-4e03-855c-eb38379d9cf2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6358472d-47e2-4e03-855c-eb38379d9cf2" name="Default Changelist" comment="Hola Dios, soy yo de nuevo.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_math3_3_6_1_javadoc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metodos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Metodos.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Congruencial.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/CongruencialLineal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/CongruencialMixto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/GeneradorMultiplicativo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/GeneradorMultiplicativo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Kolmogorov.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/Kolmogorov.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/MetodosCuadrados.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChiCuadrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChiCuadrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Congruencial.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CongruencialLineal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongruencialLineal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CongruencialMixto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongruencialMixto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GeneradorMultiplicativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeneradorMultiplicativo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kolmogorov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kolmogorov.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MetodosCuadrados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetodosCuadrados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +39,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570653043250" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -107,7 +100,8 @@
       <workItem from="1570159734554" duration="1651000" />
       <workItem from="1570641449843" duration="2682000" />
       <workItem from="1570805326257" duration="311000" />
-      <workItem from="1571064228567" duration="69000" />
+      <workItem from="1571064228567" duration="10497000" />
+      <workItem from="1571086499260" duration="3687000" />
     </task>
     <task id="LOCAL-00001" summary="Congruencial Mixto">
       <created>1570140490023</created>
@@ -137,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571063837782</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Hola Dios, soy yo de nuevo.">
+      <created>1571064628752</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571064628752</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +176,7 @@
     <MESSAGE value="Congruencial Mixto modificado para que regrese ArrayList" />
     <MESSAGE value="Conflicts solved" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Main.java&#10;#&#9;src/MetodosCuadrados.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Main.java&#10;#&#9;src/MetodosCuadrados.java" />
+    <MESSAGE value="Hola Dios, soy yo de nuevo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Hola Dios, soy yo de nuevo." />
   </component>
 </project>
