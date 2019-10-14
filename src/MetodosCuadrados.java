@@ -27,7 +27,7 @@ public class MetodosCuadrados {
             }else {
                 //En caso de tener un numero mayor a 4 digitos, procedemos a recortar valores
                 String newNumber;
-                double size = longNum - longSem;
+                double size = longNum - 4;
                 double remove = Math.ceil(size/2);
                 int crop = longNum - (int) remove;
                 newNumber = sb.substring(crop-4, crop);
