@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30a2ea19-3cb3-444f-b072-2270006f1e66" name="Default Changelist" comment="">
+    <list default="true" id="6358472d-47e2-4e03-855c-eb38379d9cf2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Congruencial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/CongruencialLineal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/CongruencialMixto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/GeneradorMultiplicativo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/GeneradorMultiplicativo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Kolmogorov.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/Kolmogorov.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metodos/MetodosCuadrados.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChiCuadrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChiCuadrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Congruencial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CongruencialLineal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongruencialLineal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CongruencialMixto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongruencialMixto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GeneradorMultiplicativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeneradorMultiplicativo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kolmogorov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kolmogorov.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MetodosCuadrados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetodosCuadrados.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,12 +36,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="160" />
+    <option name="y" value="-25" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
   <component name="ProjectId" id="1RNj4hkJlbETxx7B4YBy9MJjk4y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570653043250" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -59,12 +80,22 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="30a2ea19-3cb3-444f-b072-2270006f1e66" name="Default Changelist" comment="" />
+      <changelist id="6358472d-47e2-4e03-855c-eb38379d9cf2" name="Default Changelist" comment="" />
       <created>1569514257773</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -72,21 +103,41 @@
       <workItem from="1569514261447" duration="594000" />
       <workItem from="1569522480740" duration="84000" />
       <workItem from="1569522800006" duration="3000" />
-      <workItem from="1570040582079" duration="79000" />
-      <workItem from="1570040698104" duration="359000" />
-      <workItem from="1570121484402" duration="256000" />
-      <workItem from="1570833721650" duration="154000" />
-      <workItem from="1571061666342" duration="70000" />
-      <workItem from="1571061781311" duration="569000" />
+      <workItem from="1570125489414" duration="9494000" />
+      <workItem from="1570159734554" duration="1651000" />
+      <workItem from="1570641449843" duration="2682000" />
+      <workItem from="1570805326257" duration="311000" />
+      <workItem from="1571064228567" duration="69000" />
     </task>
-    <task id="LOCAL-00001" summary="Fixed for values less than 4">
-      <created>1570040821242</created>
+    <task id="LOCAL-00001" summary="Congruencial Mixto">
+      <created>1570140490023</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1570040821242</updated>
+      <updated>1570140490023</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Congruencial Mixto modificado para que regrese ArrayList">
+      <created>1570645303169</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570645303169</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Conflicts solved">
+      <created>1570645417217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570645417217</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Main.java&#10;#&#9;src/MetodosCuadrados.java">
+      <created>1571063837782</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571063837782</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,9 +155,26 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed for values less than 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed for values less than 4" />
+    <MESSAGE value="Congruencial Mixto" />
+    <MESSAGE value="Congruencial Mixto modificado para que regrese ArrayList" />
+    <MESSAGE value="Conflicts solved" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Main.java&#10;#&#9;src/MetodosCuadrados.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Main.java&#10;#&#9;src/MetodosCuadrados.java" />
   </component>
 </project>
