@@ -6,24 +6,30 @@ HullDobell checker to see if it passes the tests
 import java.util.ArrayList;
 
 class CongruencialMixto {
-    public ArrayList<Double> GenMix(int seed, int a, int c, int m, int n){
+    public ArrayList<Double> semilla = new ArrayList<>();
+    public ArrayList<Double> randomNumber = new ArrayList<>();
+    public ArrayList<Double> generatedRandoms = new ArrayList<>();
+
+    public void GenMix(int seed, int a, int c, int m, int n){
         double[] aux = new double[n];
         ArrayList<Double> list = new ArrayList<>();
 
         double result = seed;
-        for (int i = 0; i < n; i++){
-            aux[i] = GenMix(result, a, c, m);
-            result = aux[i];
 
-            list.add(aux[i]);
+        for (int i = 0; i < n; i++) {
+            semilla.add(result);
+            double random = GenMix(result, a, c, m);
+
+            randomNumber.add(random);
+            generatedRandoms.add(random/m);
+
+            result = random;
         }
-
-        return list;
     }
 
     private double GenMix(double X0, int a, int c, int m){
         double result = ((a * X0) + c) % m;
-        return result/m;
+        return result;
     }
 
     //if conditions are true, it returns true
