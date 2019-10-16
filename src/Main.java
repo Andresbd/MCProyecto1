@@ -162,12 +162,15 @@ public class Main {
                         CLRPanel = new JPanel();
                         CLRPanel.setLayout(new BorderLayout());
                         CLRLPanel = new JPanel();
-                        CLRLPanel.setLayout(new GridLayout(6,1));
+                        CLRLPanel.setLayout(new GridLayout(1,6));
 
                         CLRBack = new JButton("Regresar");
                         CLRBack.addActionListener(new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent e) {
+                                CL.CLSeed.clear();
+                                CL.CLAleatorio.clear();
+                                CL.CLRandomRi.clear();
                                 CLRFrame.setVisible(false);
                                 frame.setVisible(true);
                             }
@@ -176,6 +179,25 @@ public class Main {
                         CLRSeed = new JList(CL.CLSeed.toArray());
                         CLRAle = new JList((CL.CLAleatorio.toArray()));
                         CLRRi = new JList(CL.CLRandomRi.toArray());
+
+                        CLres = new JLabel("Los resultados son: ");
+                        CLSeed = new JLabel("Semilla");
+                        CLAle = new JLabel("Aleatorio");
+                        CLRi = new JLabel("Ri");
+
+                        CLRPanel.add(CLres,BorderLayout.PAGE_START);
+                        CLRPanel.add(CLRLPanel,BorderLayout.CENTER);
+                        CLRLPanel.add(CLSeed);
+                        CLRLPanel.add(CLRSeed);
+                        CLRLPanel.add(CLAle);
+                        CLRLPanel.add(CLRAle);
+                        CLRLPanel.add(CLRi);
+                        CLRLPanel.add(CLRRi);
+                        CLRPanel.add(CLRBack,BorderLayout.PAGE_END);
+
+                        CLRFrame.setContentPane(CLRPanel);
+                        CLRFrame.setLocationRelativeTo(null);
+                        CLRFrame.setVisible(true);
                     }
                 });
                 CLBack = new JButton("Regresar");

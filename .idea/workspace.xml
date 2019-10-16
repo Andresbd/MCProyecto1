@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6358472d-47e2-4e03-855c-eb38379d9cf2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CongruencialLineal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongruencialLineal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MetodosCuadrados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetodosCuadrados.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +95,7 @@
       <workItem from="1571151059455" duration="3087000" />
       <workItem from="1571155260066" duration="40000" />
       <workItem from="1571162516606" duration="344000" />
-      <workItem from="1571180791464" duration="4350000" />
+      <workItem from="1571180791464" duration="4982000" />
     </task>
     <task id="LOCAL-00001" summary="Congruencial Mixto">
       <created>1570140490023</created>
@@ -141,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571096398902</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Advancement on GUI">
+      <created>1571185432104</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571185432104</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +186,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Main.java&#10;#&#9;src/MetodosCuadrados.java" />
     <MESSAGE value="Hola Dios, soy yo de nuevo." />
     <MESSAGE value="Added first Panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added first Panel" />
+    <MESSAGE value="Advancement on GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Advancement on GUI" />
   </component>
 </project>
