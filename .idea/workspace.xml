@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6358472d-47e2-4e03-855c-eb38379d9cf2" name="Default Changelist" comment="Hola Dios, soy yo de nuevo.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_math3_3_6_1_javadoc.xml" afterDir="false" />
+    <list default="true" id="6358472d-47e2-4e03-855c-eb38379d9cf2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Metodos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Metodos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metodos/ChiCuadrada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChiCuadrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChiCuadrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CongruencialLineal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CongruencialLineal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MetodosCuadrados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetodosCuadrados.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,12 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="160" />
-    <option name="y" value="-25" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
   </component>
   <component name="ProjectId" id="1RNj4hkJlbETxx7B4YBy9MJjk4y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -101,7 +93,11 @@
       <workItem from="1570641449843" duration="2682000" />
       <workItem from="1570805326257" duration="311000" />
       <workItem from="1571064228567" duration="10497000" />
-      <workItem from="1571086499260" duration="3687000" />
+      <workItem from="1571086499260" duration="8650000" />
+      <workItem from="1571151059455" duration="3087000" />
+      <workItem from="1571155260066" duration="40000" />
+      <workItem from="1571162516606" duration="344000" />
+      <workItem from="1571180791464" duration="4350000" />
     </task>
     <task id="LOCAL-00001" summary="Congruencial Mixto">
       <created>1570140490023</created>
@@ -138,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571064628752</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added first Panel">
+      <created>1571096398902</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571096398902</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +180,7 @@
     <MESSAGE value="Conflicts solved" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Main.java&#10;#&#9;src/MetodosCuadrados.java" />
     <MESSAGE value="Hola Dios, soy yo de nuevo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hola Dios, soy yo de nuevo." />
+    <MESSAGE value="Added first Panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added first Panel" />
   </component>
 </project>

@@ -4,6 +4,7 @@ public class CongruencialLineal {
 
     public ArrayList CLAleatorio = new ArrayList<>();
     public ArrayList<Float> CLRandomRi = new ArrayList<Float>();
+    public ArrayList<Float> CLSeed = new ArrayList<Float>();
 
     public void CongLineal(float sem, float mult, float inc, float modul, float iterations) {
 
@@ -13,6 +14,7 @@ public class CongruencialLineal {
         float ri;
 
         for(int i = 0; i < iterations; i++) {
+            CLSeed.add(seed);
             random = (mult * seed) + inc;
             randomMod = random % modul;
             seed = randomMod;

@@ -3,6 +3,7 @@ import java.util.*;
 public class MetodosCuadrados {
 
     public ArrayList MCAleatorio = new ArrayList<>();
+    public ArrayList<Integer> MCSeed = new ArrayList<Integer>();
     public ArrayList<Float> MCRandomRi = new ArrayList<Float>();
 
     public void GenerarMC (int semilla, int iterations) {
@@ -15,6 +16,8 @@ public class MetodosCuadrados {
         int fixed;
 
         for(int i = 0; i < iterations; i++) {
+
+            MCSeed.add(semilla);
 
             semCua = (int) Math.pow(semilla, 2);
             generado = Integer.toString(semCua);
