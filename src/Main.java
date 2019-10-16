@@ -2,8 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class Main {
+
+    static boolean CLChiTest, CLSmirTest;
 
     public static void main(String[] args) {
     // write your code here
@@ -114,6 +118,9 @@ public class Main {
                 JButton CLCalculate;
                 JButton CLBack;
 
+                JCheckBox CLCHi;
+                JCheckBox CLSmir;
+
                 JFrame CLFrame;
                 JPanel CLPanel;
 
@@ -129,16 +136,50 @@ public class Main {
                 CLInc = new JTextField("Incremento");
                 CLMod = new JTextField("Modulo");
                 CLIterations = new JTextField("Repeticiones");
+                CLCHi = new JCheckBox("Chi Cuadrada");
+                CLSmir = new JCheckBox("Smirnov");
+
+                CLCHi.addItemListener(new ItemListener() {
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(CLCHi.isSelected()) {
+                            CLChiTest = true;
+                        }
+                    }
+                });
+
+                CLSmir.addItemListener(new ItemListener() {
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(CLSmir.isSelected()) {
+                            CLSmirTest = true;
+                        }
+                    }
+                });
 
                 CLCalculate = new JButton("Consultar");
                 CLCalculate.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+
+                        boolean CLChiResult, CLSmirResult;
+
                         CL.CongLineal(Float.parseFloat(CLSeed.getText()),Float.parseFloat(CLMult.getText()),
                                 Float.parseFloat(CLInc.getText()),Float.parseFloat(CLMod.getText()),
                                         Float.parseFloat(CLIterations.getText()));
 
                         CLFrame.setVisible(false);
+
+                        if(CLChiTest) {
+                            CH.ChiTest(CL.CLRandomRi);
+                            CLChiTest = false;
+                            CLCHi.setSelected(false);
+                        }
+
+                        if(CLSmirTest) {
+                            CLSmirTest = false;
+                            CLSmir.setSelected(false);
+                        }
 
                         JFrame CLRFrame;
                         JPanel CLRPanel;
@@ -215,6 +256,8 @@ public class Main {
                 CLPanel.add(CLMod);
                 CLPanel.add(CLIterations);
                 CLPanel.add(CLCalculate);
+                CLPanel.add(CLCHi);
+                CLPanel.add(CLSmir);
                 CLPanel.add(CLBack);
 
                 CLFrame.add(CLPanel);

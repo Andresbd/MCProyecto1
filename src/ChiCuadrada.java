@@ -109,4 +109,34 @@ public class ChiCuadrada {
             acumulated += PD[j];
         }
     }
+
+    boolean ChiTable(int n, double error) {
+
+        int caseTest;
+
+        if(error == 0.025){
+            caseTest = 1;
+        }else if(error == 0.05) {
+            caseTest = 2;
+        }else if(error == 0.1) {
+            caseTest = 3;
+        }else {
+            caseTest = 4;
+        }
+
+        switch (caseTest) {
+            case 1:
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+        }
+        return false;
+    }
 }
