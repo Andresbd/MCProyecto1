@@ -1,13 +1,15 @@
 import org.apache.commons.math3.analysis.UnivariateFunction;
 import org.apache.commons.math3.analysis.integration.SimpsonIntegrator;
 import org.apache.commons.math3.analysis.integration.UnivariateIntegrator;
+import org.apache.commons.math3.distribution.ChiSquaredDistribution;
+import org.apache.commons.math3.stat.inference.ChiSquareTest;
 
 import java.util.*;
 
 public class ChiCuadrada {
 
     int n;
-    double min, max, lambda, k, sum, median, interval, acumulated;
+    public double min, max, lambda, k, sum, median, interval, acumulated;
     double FA[];
     double FR[];
     double FE[];
@@ -110,33 +112,9 @@ public class ChiCuadrada {
         }
     }
 
-    boolean ChiTable(int n, double error) {
+    double ChiTable(int n, double error) {
 
-        int caseTest;
-
-        if(error == 0.025){
-            caseTest = 1;
-        }else if(error == 0.05) {
-            caseTest = 2;
-        }else if(error == 0.1) {
-            caseTest = 3;
-        }else {
-            caseTest = 4;
-        }
-
-        switch (caseTest) {
-            case 1:
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                break;
-        }
-        return false;
+        ChiSquaredDistribution CHD = new ChiSquaredDistribution(n);
+        return CHD.inverseCumulativeProbability(1-error);
     }
 }

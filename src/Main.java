@@ -114,6 +114,7 @@ public class Main {
                 JTextField CLMod;
                 JTextField CLInc;
                 JTextField CLIterations;
+                JTextField CLAlpha;
 
                 JButton CLCalculate;
                 JButton CLBack;
@@ -138,6 +139,7 @@ public class Main {
                 CLIterations = new JTextField("Repeticiones");
                 CLCHi = new JCheckBox("Chi Cuadrada");
                 CLSmir = new JCheckBox("Smirnov");
+                CLAlpha = new JTextField("Alpha");
 
                 CLCHi.addItemListener(new ItemListener() {
                     @Override
@@ -162,39 +164,53 @@ public class Main {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        boolean CLChiResult, CLSmirResult;
-
                         CL.CongLineal(Float.parseFloat(CLSeed.getText()),Float.parseFloat(CLMult.getText()),
                                 Float.parseFloat(CLInc.getText()),Float.parseFloat(CLMod.getText()),
                                         Float.parseFloat(CLIterations.getText()));
 
                         CLFrame.setVisible(false);
 
-                        if(CLChiTest) {
-                            CH.ChiTest(CL.CLRandomRi);
-                            CLChiTest = false;
-                            CLCHi.setSelected(false);
-                        }
-
-                        if(CLSmirTest) {
-                            CLSmirTest = false;
-                            CLSmir.setSelected(false);
-                        }
-
                         JFrame CLRFrame;
                         JPanel CLRPanel;
                         JPanel CLRLPanel;
+                        JPanel CLPanelAbajo;
 
                         JLabel CLres;
                         JLabel CLSeed;
                         JLabel CLAle;
                         JLabel CLRi;
+                        JLabel CLCHText;
+                        JLabel CLSmirText;
 
                         JList CLRSeed;
                         JList CLRAle;
                         JList CLRRi;
 
                         JButton CLRBack;
+
+                        if(CLChiTest) {
+                            CH.ChiTest(CL.CLRandomRi);
+                            double CLTable = CH.ChiTable(Integer.parseInt(CLIterations.getText()),
+                                    Double.parseDouble(CLAlpha.toString()));
+                            CLChiTest = false;
+                            CLCHi.setSelected(false);
+
+                            if(CH.acumulated < CLTable) {
+                                CLCHText = new JLabel("Se acepta la hipótesis nula debido a "+CH.acumulated+ " < " +CLTable);
+                            }else {
+                                CLCHText = new JLabel("No se acepta la hipótesis nula debido a "+CH.acumulated+ " > " +CLTable);
+                            }
+                        }else {
+                            CLCHText = new JLabel("No fue seleccionada la prueba Chi");
+                        }
+
+                        if(CLSmirTest) {
+                            CLSmirTest = false;
+                            CLSmir.setSelected(false);
+                            CLSmirText = new JLabel("Prueba de Smirnov");
+                        }else {
+                            CLSmirText = new JLabel("No fue seleccionada la prueba Smirnov");
+                        }
 
                         CLRFrame = new JFrame("Congruencial lineal");
                         CLRFrame.setSize(500,500);
@@ -204,6 +220,9 @@ public class Main {
                         CLRPanel.setLayout(new BorderLayout());
                         CLRLPanel = new JPanel();
                         CLRLPanel.setLayout(new GridLayout(1,6));
+                        CLPanelAbajo = new JPanel();
+                        CLPanelAbajo.setLayout(new GridLayout(3,1));
+
 
                         CLRBack = new JButton("Regresar");
                         CLRBack.addActionListener(new ActionListener() {
@@ -234,7 +253,10 @@ public class Main {
                         CLRLPanel.add(CLRAle);
                         CLRLPanel.add(CLRi);
                         CLRLPanel.add(CLRRi);
-                        CLRPanel.add(CLRBack,BorderLayout.PAGE_END);
+                        CLRPanel.add(CLPanelAbajo,BorderLayout.PAGE_END);
+                        CLPanelAbajo.add(CLCHText);
+                        CLPanelAbajo.add(CLSmirText);
+                        CLPanelAbajo.add(CLRBack);
 
                         CLRFrame.setContentPane(CLRPanel);
                         CLRFrame.setLocationRelativeTo(null);
@@ -258,6 +280,7 @@ public class Main {
                 CLPanel.add(CLCalculate);
                 CLPanel.add(CLCHi);
                 CLPanel.add(CLSmir);
+                CLPanel.add(CLAlpha);
                 CLPanel.add(CLBack);
 
                 CLFrame.add(CLPanel);
