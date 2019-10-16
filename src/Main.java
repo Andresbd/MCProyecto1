@@ -9,7 +9,7 @@ import java.awt.event.ItemListener;
 
 public class Main {
 
-    static boolean CLChiTest, CLSmirTest;
+    static boolean CLChiTest, CLSmirTest, CMChiTest, CMSmirTest;
 
     public static void main(String[] args) {
     // write your code here
@@ -17,7 +17,7 @@ public class Main {
         MetodosCuadrados MC = new MetodosCuadrados();
         ChiCuadrada CH = new ChiCuadrada();
         CongruencialLineal CL = new CongruencialLineal();
-
+        CongruencialMixto CM = new CongruencialMixto();
         //Creación de Frame
         JFrame frame = new JFrame("Proyecto 1");
         frame.setSize(750, 250);
@@ -215,6 +215,7 @@ public class Main {
                         }
 
                         if(CLSmirTest) {
+
                             CLSmirTest = false;
                             CLSmir.setSelected(false);
                             CLSmirText = new JLabel("Prueba de Smirnov");
@@ -306,13 +307,193 @@ public class Main {
                 CMiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                 JPanel CMiPanel;
+                JTextField CMSeed;
+                JTextField CMMult;
+                JTextField CMMod;
+                JTextField CMInc;
+                JTextField CMIterations;
+                JTextField CMAlpha;
 
+                JButton CMCalculate;
+                JButton CMBack;
+
+                JCheckBox CMCHi;
+                JCheckBox CMSmir;
+
+                CMiPanel = new JPanel();
+                CMiPanel.setLayout(new GridLayout(4,2));
+
+                CMSeed = new JTextField("Semilla");
+                CMMult = new JTextField("Multiplicador");
+                CMInc = new JTextField("Incremento");
+                CMMod = new JTextField("Modulo");
+                CMIterations = new JTextField("Repeticiones");
+                CMCHi = new JCheckBox("Chi Cuadrada");
+                CMSmir = new JCheckBox("Smirnov");
+                CMAlpha = new JTextField("Alpha");
+
+                CMCHi.addItemListener(new ItemListener() {
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(CMCHi.isSelected()) {
+                            CMChiTest = true;
+                        }
+                    }
+                });
+
+                CMSmir.addItemListener(new ItemListener() {
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        CMSmirTest = true;
+                    }
+                });
+
+                CMCalculate = new JButton("Consultar");
+                CMCalculate.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        CM.GenMix(Integer.parseInt(CMSeed.getText()),Integer.parseInt(CMMult.getText()),
+                                Integer.parseInt(CMInc.getText()),Integer.parseInt(CMMod.getText()),
+                                Integer.parseInt(CMIterations.getText()));
+
+                        CMiFrame.setVisible(false);
+
+                        JFrame CMRFrame;
+                        JPanel CMRPanel;
+                        JPanel CMUPanel;
+                        JPanel CMDPanel;
+
+                        JLabel CMres;
+                        JLabel CMSeed;
+                        JLabel CMAle;
+                        JLabel CMRi;
+                        JLabel CMCHText;
+                        JLabel CMSmirText;
+
+                        JList CMRSeed;
+                        JList CMRAle;
+                        JList CMRRi;
+
+                        JButton CMRBack;
+
+                        CMRSeed = new JList(CM.semilla.toArray());
+                        CMRRi = new JList(CM.generatedRandoms.toArray());
+                        CMRAle= new JList(CM.randomNumber.toArray());
+
+                        if(CMChiTest) {
+                            CH.ChiTest(CM.generatedRandoms);
+                            double CMTable = CH.ChiTable(Integer.parseInt(CMIterations.getText()), Double.parseDouble(CMAlpha.getText()));
+                            CMChiTest = false;
+                            CMCHi.setSelected(false);
+
+                            if(CH.acumulated < CMTable) {
+                                CMCHText = new JLabel("Se acepta la hipótesis nula debido a "+CH.acumulated+ " < " +CMTable);
+                            }else {
+                                CMCHText = new JLabel("No se acepta la hipótesis nula debido a "+CH.acumulated+ " > " +CMTable);
+                            }
+
+                            CH.acumulated = 0;
+
+                        }else {
+                            CMCHText = new JLabel("No fue seleccionada la prueba Chi");
+                        }
+
+                        if(CMSmirTest) {
+
+                            CMSmirTest = false;
+                            CMSmir.setSelected(false);
+                            CMSmirText = new JLabel("Prueba de Smirnov");
+                        }else {
+                            CMSmirText = new JLabel("No fue seleccionada la prueba Smirnov");
+                        }
+
+                        CMRFrame = new JFrame("Congruencial mixto");
+                        CMRFrame.setSize(500,500);
+                        CMRFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                        CMUPanel = new JPanel();
+                        CMUPanel.setLayout(new BorderLayout());
+                        CMRPanel = new JPanel();
+                        CMRPanel.setLayout(new GridLayout(1,6));
+                        CMDPanel = new JPanel();
+                        CMDPanel.setLayout(new GridLayout(3,1));
+
+
+                        CMRBack = new JButton("Regresar");
+                        CMRBack.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                CM.generatedRandoms.clear();
+                                CM.randomNumber.clear();
+                                CM.semilla.clear();
+                                CMRFrame.setVisible(false);
+                                frame.setVisible(true);
+                            }
+                        });
+
+                        CMres = new JLabel("Los resultados son: ");
+                        CMSeed = new JLabel("Semilla");
+                        CMAle = new JLabel("Aleatorio");
+                        CMRi = new JLabel("Ri");
+
+                        CMUPanel.add(CMres,BorderLayout.PAGE_START);
+                        CMUPanel.add(CMRPanel,BorderLayout.CENTER);
+                        CMRPanel.add(CMSeed);
+                        CMRPanel.add(CMRSeed);
+                        CMRPanel.add(CMAle);
+                        CMRPanel.add(CMRAle);
+                        CMRPanel.add(CMRi);
+                        CMRPanel.add(CMRRi);
+                        CMUPanel.add(CMDPanel,BorderLayout.PAGE_END);
+                        CMDPanel.add(CMCHText);
+                        CMDPanel.add(CMSmirText);
+                        CMDPanel.add(CMRBack);
+
+                        CMRFrame.setContentPane(CMUPanel);
+                        CMRFrame.setLocationRelativeTo(null);
+                        frame.setVisible(false);
+                        CMiFrame.setVisible(false);
+                        CMRFrame.setVisible(true);
+                    }
+                });
+
+                CMBack = new JButton("Regresar");
+                CMCalculate.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        CMiFrame.setVisible(false);
+                        frame.setVisible(true);
+                    }
+                });
+
+                CMiPanel.add(CMSeed);
+                CMiPanel.add(CMMult);
+                CMiPanel.add(CMInc);
+                CMiPanel.add(CMMod);
+                CMiPanel.add(CMIterations);
+                CMiPanel.add(CMCalculate);
+                CMiPanel.add(CMCHi);
+                CMiPanel.add(CMSmir);
+                CMiPanel.add(CMAlpha);
+                CMiPanel.add(CMBack);
+
+                CMiFrame.add(CMiPanel);
+                CMiFrame.setLocationRelativeTo(null);
                 frame.setVisible(false);
+                CMiFrame.setVisible(true);
             }
         });
 
         JButton GenMul = new JButton("Generador Multiplicativo");
         GenMul.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        JButton ConLiCom = new JButton("Congruencial Lineal Combinado");
+        ConLiCom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -325,7 +506,7 @@ public class Main {
         jp.add(MetCua);
         jp.add(ConLin);
         jp.add(ConMix);
-        jp.add(new JLabel(""));
+        jp.add(ConLiCom);
         jp.add(GenMul);
         jp.add(new JLabel(""));
         frame.setContentPane(jp);

@@ -6,9 +6,9 @@ HullDobell checker to see if it passes the tests
 import java.util.ArrayList;
 
 class CongruencialMixto {
-    public ArrayList<Double> semilla = new ArrayList<>();
-    public ArrayList<Double> randomNumber = new ArrayList<>();
-    public ArrayList<Double> generatedRandoms = new ArrayList<>();
+    public ArrayList<Float> semilla = new ArrayList<>();
+    public ArrayList<Float> randomNumber = new ArrayList<>();
+    public ArrayList<Float> generatedRandoms = new ArrayList<>();
 
     public void GenMix(int seed, int a, int c, int m, int n){
         double[] aux = new double[n];
@@ -17,11 +17,11 @@ class CongruencialMixto {
         double result = seed;
 
         for (int i = 0; i < n; i++) {
-            semilla.add(result);
+            semilla.add((float)result);
             double random = GenMix(result, a, c, m);
 
-            randomNumber.add(random);
-            generatedRandoms.add(random/m);
+            randomNumber.add((float)random);
+            generatedRandoms.add((float)random/m);
 
             result = random;
         }
