@@ -1,11 +1,16 @@
+/*
+To use this class you can create an arrayList of the generated randoms called GenMix() and the
+HullDobell checker to see if it passes the tests
+ */
+
 import java.util.ArrayList;
 
 class CongruencialMixto {
-    public ArrayList GenMix(int X0, int a, int c, int m, int n){
+    public ArrayList GenMix(int seed, int a, int c, int m, int n){
         float[] aux = new float[n];
         ArrayList list = new ArrayList();
 
-        float result = X0;
+        float result = seed;
         for (int i = 0; i < n; i++){
             aux[i] = GenMix(result, a, c, m);
             result = aux[i];
@@ -17,16 +22,12 @@ class CongruencialMixto {
     }
 
     public float GenMix(float X0, int a, int c, int m){
-        //if we meet the conditions we do the whole process, else we return -1
-        if(checkConditions(a, c, m)){
-            float result = ((a * X0) + c) % m;
-            return result/m;
-        }
-        return -1.0f;
+        float result = ((a * X0) + c) % m;
+        return result/m;
     }
 
     //if conditions are true, it returns true
-    private boolean checkConditions(int a, int c, int m){
+    private boolean HullDobell(int a, int c, int m){
 
         if (first(c, m) && second(m, a) && third(m, a)){
             return true;
