@@ -6,11 +6,11 @@ HullDobell checker to see if it passes the tests
 import java.util.ArrayList;
 
 class CongruencialMixto {
-    public ArrayList GenMix(int seed, int a, int c, int m, int n){
-        float[] aux = new float[n];
-        ArrayList list = new ArrayList();
+    public ArrayList<Double> GenMix(int seed, int a, int c, int m, int n){
+        double[] aux = new double[n];
+        ArrayList<Double> list = new ArrayList<>();
 
-        float result = seed;
+        double result = seed;
         for (int i = 0; i < n; i++){
             aux[i] = GenMix(result, a, c, m);
             result = aux[i];
@@ -21,8 +21,8 @@ class CongruencialMixto {
         return list;
     }
 
-    public float GenMix(float X0, int a, int c, int m){
-        float result = ((a * X0) + c) % m;
+    private double GenMix(double X0, int a, int c, int m){
+        double result = ((a * X0) + c) % m;
         return result/m;
     }
 
@@ -44,8 +44,8 @@ class CongruencialMixto {
 
     //checar este
     private boolean second(int m, int a){
-        ArrayList primes = primeFactors(m);
-        ArrayList aux = new ArrayList();
+        ArrayList<Integer> primes = primeFactors(m);
+        ArrayList<Integer> aux = new ArrayList<>();
 
         for (int i = 0; i< primes.size(); i++){
             aux.add((a-1)%(int)primes.get(i));
@@ -84,9 +84,9 @@ class CongruencialMixto {
         return mcd;
     }
 
-    private ArrayList primeFactors(int n){
+    private ArrayList<Integer> primeFactors(int n){
         int i = 2;
-        ArrayList factors = new ArrayList();
+        ArrayList<Integer> factors = new ArrayList<>();
 
         while(i*i <= n){
             if(n%i == 1){
