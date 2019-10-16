@@ -14,7 +14,7 @@ public class Main {
         MetodosCuadrados MC = new MetodosCuadrados();
         ChiCuadrada CH = new ChiCuadrada();
         CongruencialLineal CL = new CongruencialLineal();
-
+        CongruencialMixto CM = new CongruencialMixto();
         //Creación de Frame
         JFrame frame = new JFrame("Proyecto 1");
         frame.setSize(750, 250);
@@ -212,6 +212,7 @@ public class Main {
                         }
 
                         if(CLSmirTest) {
+
                             CLSmirTest = false;
                             CLSmir.setSelected(false);
                             CLSmirText = new JLabel("Prueba de Smirnov");
@@ -316,13 +317,21 @@ public class Main {
             }
         });
 
+        JButton ConLiCom = new JButton("congruencial Lineal Combinado");
+        ConLiCom.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
         jp.add(new JLabel(""));
         jp.add(new JLabel("Seleccione la metodología a usar:"));
         jp.add(new JLabel(""));
         jp.add(MetCua);
         jp.add(ConLin);
         jp.add(ConMix);
-        jp.add(new JLabel(""));
+        jp.add(ConLiCom);
         jp.add(GenMul);
         jp.add(new JLabel(""));
         frame.setContentPane(jp);
