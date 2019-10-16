@@ -168,6 +168,7 @@ public class Main {
                                 Float.parseFloat(CLInc.getText()),Float.parseFloat(CLMod.getText()),
                                         Float.parseFloat(CLIterations.getText()));
 
+
                         CLFrame.setVisible(false);
 
                         JFrame CLRFrame;
@@ -188,10 +189,13 @@ public class Main {
 
                         JButton CLRBack;
 
+                        CLRSeed = new JList(CL.CLSeed.toArray());
+                        CLRAle = new JList((CL.CLAleatorio.toArray()));
+                        CLRRi = new JList(CL.CLRandomRi.toArray());
+
                         if(CLChiTest) {
                             CH.ChiTest(CL.CLRandomRi);
-                            double CLTable = CH.ChiTable(Integer.parseInt(CLIterations.getText()),
-                                    Double.parseDouble(CLAlpha.toString()));
+                            double CLTable = CH.ChiTable(Integer.parseInt(CLIterations.getText()), Double.parseDouble(CLAlpha.getText()));
                             CLChiTest = false;
                             CLCHi.setSelected(false);
 
@@ -200,6 +204,9 @@ public class Main {
                             }else {
                                 CLCHText = new JLabel("No se acepta la hipótesis nula debido a "+CH.acumulated+ " > " +CLTable);
                             }
+
+                            CH.acumulated = 0;
+
                         }else {
                             CLCHText = new JLabel("No fue seleccionada la prueba Chi");
                         }
@@ -235,10 +242,6 @@ public class Main {
                                 frame.setVisible(true);
                             }
                         });
-
-                        CLRSeed = new JList(CL.CLSeed.toArray());
-                        CLRAle = new JList((CL.CLAleatorio.toArray()));
-                        CLRRi = new JList(CL.CLRandomRi.toArray());
 
                         CLres = new JLabel("Los resultados son: ");
                         CLSeed = new JLabel("Semilla");
@@ -295,7 +298,13 @@ public class Main {
         ConMix.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFrame CMiFrame = new JFrame("Congruencial Mixto");
+                CMiFrame.setSize(500,500);
+                CMiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+                JPanel CMiPanel;
+
+                frame.setVisible(false);
             }
         });
 
