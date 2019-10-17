@@ -10,6 +10,8 @@ class CongruencialMixto {
     public ArrayList<Float> randomNumber = new ArrayList<>();
     public ArrayList<Float> generatedRandoms = new ArrayList<>();
 
+    public boolean Rules;
+
     public void GenMix(int seed, int a, int c, int m, int n){
         double[] aux = new double[n];
         ArrayList<Double> list = new ArrayList<>();
@@ -25,6 +27,8 @@ class CongruencialMixto {
 
             result = random;
         }
+
+        Rules = HullDobell(a, c, m);
     }
 
     private double GenMix(double X0, int a, int c, int m){

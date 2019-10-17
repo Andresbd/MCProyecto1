@@ -1,5 +1,3 @@
-import org.apache.commons.math3.stat.inference.KolmogorovSmirnovTest;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -591,7 +589,7 @@ public class Main {
                         GenMulRi = new JList(GenMul.GenMulRandomRi.toArray());
 
                         if(GenMulChiTest) {
-                            //CH.ChiTest(GenMul.GenMulRandomRi);
+                            CH.ChiTest(GenMul.GenMulRandomRi);
                             double CLTable = CH.ChiTable(Integer.parseInt(GenMulJtextItera.getText()), Double.parseDouble(GenMulJtextAlpha.getText()));
                             GenMulChiTest = false;
                             GenMulCHi.setSelected(false);
