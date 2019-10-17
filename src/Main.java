@@ -366,6 +366,7 @@ public class Main {
                         JLabel CMRi;
                         JLabel CMCHText;
                         JLabel CMSmirText;
+                        JLabel CMRules;
 
                         JList CMRSeed;
                         JList CMRAle;
@@ -404,6 +405,12 @@ public class Main {
                             CMSmirText = new JLabel("No fue seleccionada la prueba Smirnov");
                         }
 
+                        if(CM.Rules) {
+                            CMRules = new JLabel("Los parámetros son aceptados para la prueba Hull-Dobel");
+                        }else {
+                            CMRules = new JLabel("Los parámetros no son aceptados para la prueba Hull-Dobel");
+                        }
+
                         CMRFrame = new JFrame("Congruencial mixto");
                         CMRFrame.setSize(500,500);
                         CMRFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -413,7 +420,7 @@ public class Main {
                         CMRPanel = new JPanel();
                         CMRPanel.setLayout(new GridLayout(1,6));
                         CMDPanel = new JPanel();
-                        CMDPanel.setLayout(new GridLayout(3,1));
+                        CMDPanel.setLayout(new GridLayout(4,1));
 
 
                         CMRBack = new JButton("Regresar");
@@ -444,6 +451,7 @@ public class Main {
                         CMUPanel.add(CMDPanel,BorderLayout.PAGE_END);
                         CMDPanel.add(CMCHText);
                         CMDPanel.add(CMSmirText);
+                        CMDPanel.add(CMRules);
                         CMDPanel.add(CMRBack);
 
                         CMRFrame.setContentPane(CMUPanel);
