@@ -14,6 +14,7 @@ public class Main {
 
         MetodosCuadrados MC = new MetodosCuadrados();
         ChiCuadrada CH = new ChiCuadrada();
+        Kolmogorov Kol = new Kolmogorov();
         CongruencialLineal CL = new CongruencialLineal();
         CongruencialMixto CM = new CongruencialMixto();
         GeneradorMultiplicativo GenMul = new GeneradorMultiplicativo();
@@ -215,10 +216,18 @@ public class Main {
                         }
 
                         if(CLSmirTest) {
-
+                            Kol.KolmogorovSmirnoffTest(CL.CLRandomRi);
+                            double CLTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(CLIterations.getText()), Double.parseDouble(CLAlpha.getText()));
                             CLSmirTest = false;
                             CLSmir.setSelected(false);
-                            CLSmirText = new JLabel("Prueba de Smirnov");
+
+                            if(Kol.acumulated < CLTable){
+                                CLSmirText = new JLabel("Se acepta la hipótesis nula debido a "+Kol.acumulated+ " < " +CLTable);
+                            }
+                            else {
+                                CLSmirText = new JLabel("No se acepta la hipótesis nula debido a "+Kol.acumulated+ " > " +CLTable);
+                            }
+
                         }else {
                             CLSmirText = new JLabel("No fue seleccionada la prueba Smirnov");
                         }
@@ -400,10 +409,17 @@ public class Main {
                         }
 
                         if(CMSmirTest) {
-
+                            Kol.KolmogorovSmirnoffTest(CM.generatedRandoms);
+                            double CMTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(CMIterations.getText()), Double.parseDouble(CMAlpha.getText()));
                             CMSmirTest = false;
                             CMSmir.setSelected(false);
-                            CMSmirText = new JLabel("Prueba de Smirnov");
+
+                            if(Kol.acumulated < CMTable){
+                                CMSmirText = new JLabel("Se acepta la hipótesis nula debido a "+Kol.acumulated+ " < " +CMTable);
+                            }
+                            else {
+                                CMSmirText = new JLabel("No se acepta la hipótesis nula debido a "+Kol.acumulated+ " > " +CMTable);
+                            }
                         }else {
                             CMSmirText = new JLabel("No fue seleccionada la prueba Smirnov");
                         }
@@ -607,9 +623,17 @@ public class Main {
                         }
 
                         if(GenMulSmirTest) {
+                            Kol.KolmogorovSmirnoffTest(GenMul.GenMulRandomRi);
+                            double GenMulTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(GenMulJtextItera.getText()), Double.parseDouble(GenMulJtextAlpha.getText()));
                             GenMulSmirTest = false;
                             GenMulSmir.setSelected(false);
-                            GenMulSmirText = new JLabel("Prueba de Smirnov");
+
+                            if(Kol.acumulated < GenMulTable){
+                                GenMulSmirText = new JLabel("Se acepta la hipótesis nula debido a "+Kol.acumulated+ " < " +GenMulTable);
+                            }
+                            else {
+                                GenMulSmirText = new JLabel("No se acepta la hipótesis nula debido a "+Kol.acumulated+ " > " +GenMulTable);
+                            }
                         }else {
                             GenMulSmirText = new JLabel("No fue seleccionada la prueba Smirnov");
                         }

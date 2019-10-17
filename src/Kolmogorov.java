@@ -2,60 +2,64 @@ import java.util.ArrayList;
 
 public class Kolmogorov {
 
-    public double KolmogorovSmirnoffTest(ArrayList<Double> values){
+    public float acumulated;
+
+    public float KolmogorovSmirnoffTest(ArrayList<Float> values){
         int n = values.size();
 
-        ArrayList<Double> iOverN = calculateIOverN(n); // i/n
+        ArrayList<Float> iOverN = calculateIOverN(n); // i/n
 
-        ArrayList<Double> iOverNMinusR = calculateIOverNMinusR(iOverN, values);// i/n - R(i)
+        ArrayList<Float> iOverNMinusR = calculateIOverNMinusR(iOverN, values);// i/n - R(i)
 
-        ArrayList<Double> iMinus1OverNMinusR = calculateIMinus1OverNMinusR(iOverN, values); // (i-1)/n - R(i)
+        ArrayList<Float> iMinus1OverNMinusR = calculateIMinus1OverNMinusR(iOverN, values); // (i-1)/n - R(i)
 
-        double Dplus = maxVal(iOverNMinusR);
-        double Dminus = maxVal(iMinus1OverNMinusR);
+        float Dplus = maxVal(iOverNMinusR);
+        float Dminus = maxVal(iMinus1OverNMinusR);
 
-        return Math.max(Dplus, Dminus);
+        acumulated = Math.max(Dplus, Dminus);
+
+        return (float) Math.max(Dplus, Dminus);
     }
 
-    private ArrayList<Double> calculateIOverN(int n){
-        ArrayList<Double> array = new ArrayList<>();
+    private ArrayList<Float> calculateIOverN(int n){
+        ArrayList<Float> array = new ArrayList<>();
         for (int i = 1; i <= n; i++){
-            double iOverN = (double)i / n;
+            float iOverN = (float)i / n;
             array.add(iOverN);
         }
         return array;
     }
 
-    private ArrayList<Double> calculateIOverNMinusR(ArrayList<Double> iOverN, ArrayList<Double> R){
-        ArrayList<Double> iOverNMinusR = new ArrayList<>();
+    private ArrayList<Float> calculateIOverNMinusR(ArrayList<Float> iOverN, ArrayList<Float> R){
+        ArrayList<Float> iOverNMinusR = new ArrayList<>();
         for (int i = 0; i < R.size(); i++){
-            double subs = iOverN.get(i) - R.get(i);
+            float subs = iOverN.get(i) - R.get(i);
             iOverNMinusR.add(Math.abs(subs));
         }
         return iOverNMinusR;
     }
 
-    private ArrayList<Double> calculateIMinus1OverNMinusR(ArrayList<Double> iOverN, ArrayList<Double> R){
-        ArrayList<Double> IMinus1OverNMinusR = new ArrayList<>();
+    private ArrayList<Float> calculateIMinus1OverNMinusR(ArrayList<Float> iOverN, ArrayList<Float> R){
+        ArrayList<Float> IMinus1OverNMinusR = new ArrayList<>();
         IMinus1OverNMinusR.add(0-R.get(0));
         for (int i = 1; i < R.size(); i++){
-            double subs = iOverN.get(i-1) - R.get(i);
+            float subs = iOverN.get(i-1) - R.get(i);
             IMinus1OverNMinusR.add(Math.abs(subs));
         }
         return IMinus1OverNMinusR;
     }
 
-    private double maxVal(ArrayList<Double> list){
-        double max = 0;
-        for (Double aDouble : list) {
-            if (aDouble > max) {
-                max = aDouble;
+    private float maxVal(ArrayList<Float> list){
+        float max = 0;
+        for (Float aFloat : list) {
+            if (aFloat > max) {
+                max = aFloat;
             }
         }
         return max;
     }
 
-    double KolmogorovSmirnovTable(int n, double alpha){
+    float KolmogorovSmirnovTable(int n, double alpha){
 
         int alphaConverted;
         int newAlpha = (int)(alpha*1000);
@@ -142,6 +146,6 @@ public class Kolmogorov {
                 {0.14840, 0.16959, 0.18841, 0.21068, 0.22604, 0.24039, 0.25809, 0.27067}
         };
 
-        return KolmogorovTable[n-1][alphaConverted];
+        return (float)KolmogorovTable[n-1][alphaConverted];
     }
 }
