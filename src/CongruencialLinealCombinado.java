@@ -7,7 +7,7 @@ public class CongruencialLinealCombinado {
     public ArrayList<Float> randomNumber2 = new ArrayList<>();
     public ArrayList<Float> generatedRandoms = new ArrayList<>();
 
-    public void GenLinealComb(int X10, int X20, int a1, int a2, int m1, int m2, int m3, int n){
+    public void GenLinealComb(float X10, float X20, float a1, float a2, float m1, float m2, float m3, float n){
 
         float result1 = X10;
         float result2 = X20;
