@@ -1,3 +1,5 @@
+import org.apache.commons.math3.stat.inference.KolmogorovSmirnovTest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,14 +9,17 @@ import java.awt.event.ItemListener;
 
 public class Main {
 
-    static boolean CLChiTest, CLSmirTest, CMChiTest, CMSmirTest;
+    static boolean CLChiTest, CLSmirTest, CMChiTest, CMSmirTest, GenMulChiTest, GenMulSmirTest;
 
     public static void main(String[] args) {
     // write your code here
+
         MetodosCuadrados MC = new MetodosCuadrados();
         ChiCuadrada CH = new ChiCuadrada();
         CongruencialLineal CL = new CongruencialLineal();
         CongruencialMixto CM = new CongruencialMixto();
+        GeneradorMultiplicativo GenMul = new GeneradorMultiplicativo();
+
         //Creación de Frame
         JFrame frame = new JFrame("Proyecto 1");
         frame.setSize(750, 250);
@@ -489,10 +494,162 @@ public class Main {
             }
         });
 
-        JButton GenMul = new JButton("Generador Multiplicativo");
-        GenMul.addActionListener(new ActionListener() {
+        JButton GenMulti = new JButton("Generador Multiplicativo");
+        GenMulti.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                //Creación de un nuevo frame
+                JFrame GenMulFrame = new JFrame("Generador Multiplicativo");
+                GenMulFrame.setSize(250, 250);
+                GenMulFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                //Creación de un nuevo panel
+                JPanel GenMulJp = new JPanel();
+                GenMulJp.setLayout(new GridLayout(9,1));
+
+                JTextField GenMulJtextSeed  = new JTextField("Semilla",16);
+                JTextField GenMulJtextValueA  = new JTextField("Valor a",16);
+                JTextField GenMulJtextMod  = new JTextField("Modulo",16);
+                JTextField GenMulJtextItera  = new JTextField("Iteraciones",16);
+                JTextField GenMulJtextAlpha  = new JTextField("Alpha",16);
+                JCheckBox GenMulCHi = new JCheckBox("Chi Cuadrada");
+                JCheckBox GenMulSmir = new JCheckBox("Smirnov");
+                JButton GenMulBack = new JButton("Regresar");
+
+                GenMulCHi.addItemListener(new ItemListener() {
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(GenMulCHi.isSelected()) {
+                            GenMulChiTest = true;
+                        }
+                    }
+                });
+
+                GenMulSmir.addItemListener(new ItemListener() {
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if(GenMulSmir.isSelected()) {
+                            GenMulSmirTest = true;
+                        }
+                    }
+                });
+
+
+                GenMulBack.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        GenMulFrame.setVisible(false);
+                        frame.setVisible(true);
+                    }
+                });
+                JButton GenMulCalculate = new JButton("Consultar");
+                GenMulCalculate.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        GenMulFrame.setVisible(false);
+                        GenMul.GenerarGenMult(Float.parseFloat(GenMulJtextSeed.getText()),
+                                Float.parseFloat(GenMulJtextMod.getText()),
+                                Float.parseFloat(GenMulJtextValueA.getText()),
+                                Float.parseFloat(GenMulJtextItera.getText()));
+
+                        JList GenMulRList;
+                        JList GenMulXList;
+                        JList GenMulRi;
+
+                        JFrame GenMulRFrame = new JFrame("Generador Multiplicativo");
+                        GenMulRFrame.setSize(1100, 500);
+                        GenMulRFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                        JPanel GenMulRPanel = new JPanel();
+                        JPanel GenMulLPanel = new JPanel();
+                        JPanel GenMulAbajoPanel = new JPanel();
+                        GenMulLPanel.setLayout(new GridLayout(1,4));
+                        GenMulRPanel.setLayout(new BorderLayout());
+                        GenMulAbajoPanel.setLayout(new GridLayout(3,1));
+                        JLabel GenMulCHText;
+                        JLabel GenMulSmirText;
+                        JLabel GenMulRRi;
+                        JButton GenMulRBack = new JButton("Regresar");
+
+
+                        GenMulRBack.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                GenMul.GenMulRandomRi.clear();
+                                GenMul.GenMulSeed.clear();
+                                GenMul.GenMulValueA.clear();
+                                GenMul.GenMulMod.clear();
+                                GenMul.GenMulItera.clear();
+                                GenMulRFrame.setVisible(false);
+                                frame.setVisible(true);
+                            }
+                        });
+
+                        GenMulXList = new JList(GenMul.GenMulValueX.toArray());
+                        GenMulRList = new JList(GenMul.GenMulValueR.toArray());
+                        GenMulRi = new JList(GenMul.GenMulRandomRi.toArray());
+
+                        if(GenMulChiTest) {
+                            //CH.ChiTest(GenMul.GenMulRandomRi);
+                            double CLTable = CH.ChiTable(Integer.parseInt(GenMulJtextItera.getText()), Double.parseDouble(GenMulJtextAlpha.getText()));
+                            GenMulChiTest = false;
+                            GenMulCHi.setSelected(false);
+
+                            if(CH.acumulated < CLTable) {
+                                GenMulCHText = new JLabel("Se acepta la hipótesis nula debido a "+CH.acumulated+ " < " +CLTable);
+                            }else {
+                                GenMulCHText = new JLabel("No se acepta la hipótesis nula debido a "+CH.acumulated+ " > " +CLTable);
+                            }
+
+                            CH.acumulated = 0;
+
+                        }else {
+                            GenMulCHText = new JLabel("No fue seleccionada la prueba Chi");
+                        }
+
+                        if(GenMulSmirTest) {
+                            GenMulSmirTest = false;
+                            GenMulSmir.setSelected(false);
+                            GenMulSmirText = new JLabel("Prueba de Smirnov");
+                        }else {
+                            GenMulSmirText = new JLabel("No fue seleccionada la prueba Smirnov");
+                        }
+                        GenMulRPanel.add(new JLabel("Los resultados son: "), BorderLayout.PAGE_START);
+                        GenMulRPanel.add(GenMulLPanel,BorderLayout.CENTER);
+                        GenMulLPanel.add(new JLabel("Valor X:"));
+                        GenMulLPanel.add(GenMulXList);
+                        GenMulLPanel.add(new JLabel("Valor R:"));
+                        GenMulLPanel.add(GenMulRList);
+                        GenMulLPanel.add(new JLabel("Ri:"));
+                        GenMulLPanel.add(GenMulRi);
+                        GenMulRPanel.add(GenMulAbajoPanel,BorderLayout.PAGE_END);
+                        GenMulAbajoPanel.add(GenMulCHText);
+                        GenMulAbajoPanel.add(GenMulSmirText);
+                        GenMulAbajoPanel.add(GenMulRBack);
+
+                        GenMulRFrame.add(GenMulRPanel);
+
+                        GenMulRFrame.setLocationRelativeTo(null);
+                        GenMulRFrame.setVisible(true);
+                    }
+                });
+
+
+                GenMulJp.add(GenMulJtextSeed);
+                GenMulJp.add(GenMulJtextValueA);
+                GenMulJp.add(GenMulJtextMod);
+                GenMulJp.add(GenMulJtextItera);
+                GenMulJp.add(GenMulCalculate);
+                GenMulJp.add(GenMulCHi);
+                GenMulJp.add(GenMulSmir);
+                GenMulJp.add(GenMulJtextAlpha);
+                GenMulJp.add(GenMulBack);
+
+                GenMulFrame.add(GenMulJp);
+                GenMulFrame.setLocationRelativeTo(null);
+                frame.setVisible(false);
+                GenMulFrame.setVisible(true);
 
             }
         });
@@ -512,7 +669,7 @@ public class Main {
         jp.add(ConLin);
         jp.add(ConMix);
         jp.add(ConLiCom);
-        jp.add(GenMul);
+        jp.add(GenMulti);
         jp.add(new JLabel(""));
         frame.setContentPane(jp);
         frame.setLocationRelativeTo(null);
