@@ -1,32 +1,40 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class GeneradorMultiplicativo{
 
-    public static void GenMult(){
+    public ArrayList<Float> GenMulSeed = new ArrayList<Float>();
+    public ArrayList<Float> GenMulValueA = new ArrayList<Float>();
+    public ArrayList<Float> GenMulMod = new ArrayList<Float>();
+    public ArrayList<Float> GenMulItera = new ArrayList<Float>();
+    public ArrayList<Float> GenMulValueX = new ArrayList<Float>();
+    public ArrayList<Float> GenMulValueR = new ArrayList<Float>();
+    public ArrayList<Float> GenMulRandomRi = new ArrayList<Float>();
 
-        int semilla;
-        int valorA;
-        int modulo;
-        int valorUno;
-        double valorR; // para transformarlos en invervalos de 0's y 1's
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("--- Generador Multiplicativo ---");
-        System.out.println("Ingresa el valor semilla:");
-        semilla = scan.nextInt();
-        System.out.println("Ingresa el valor 'a':");
-        valorA = scan.nextInt();
-        System.out.println("Ingresa el módulo");
-        modulo = scan.nextInt();
+    public  void GenerarGenMult(float semilla, float modulo, float valueA, float iteraciones){
 
-        System.out.println("(" + valorA + "*" + semilla + ")mod" + modulo);
-        for (int i = 0; i <= 10; i++) {
-            valorUno = (valorA * semilla) % modulo;
-            System.out.println("Valor X" + i + ":" + valorUno);
-            valorR = (double) valorUno / (double) (modulo - 1); // para transformarlos en invervalos de 0's y 1's
-            System.out.println("Valor R" + i + ":" + valorR);
+        float valorUno = 0;
+        float valorR = 0;
+
+        for(int i = 0; i < iteraciones; i++){
+            GenMulSeed.add(semilla);
+            GenMulMod.add(modulo);
+            GenMulValueA.add(valueA);
+
+            valorUno = (valueA * semilla) % modulo;
+            valorR = (float) valorUno / (float) (modulo - 1);
             semilla = valorUno;
+
+            System.out.println("Valor X" + i + ":" + valorUno);
+            System.out.println("Valor R" + i + ":" + valorR);
+
+            GenMulValueX.add(valorUno);
+            GenMulValueR.add(valorR);
+            GenMulRandomRi.add(valorUno/modulo);
+
+
         }
+
     }
 
 }
