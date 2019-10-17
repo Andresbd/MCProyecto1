@@ -18,6 +18,7 @@ public class Main {
         CongruencialLineal CL = new CongruencialLineal();
         CongruencialMixto CM = new CongruencialMixto();
         GeneradorMultiplicativo GenMul = new GeneradorMultiplicativo();
+        CongruencialLinealCombinado CLC = new CongruencialLinealCombinado();
 
         //Creación de Frame
         JFrame frame = new JFrame("Proyecto 1");
@@ -680,9 +681,131 @@ public class Main {
         ConLiCom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                //Creación de un nuevo frame
+                JFrame CLCFrame = new JFrame("Congruencial Lineal Combinado");
+                CLCFrame.setSize(550, 550);
+                CLCFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                //Creación de un nuevo panel
+                JPanel CLCJp = new JPanel();
+                CLCJp.setLayout(new GridLayout(5,2));
+
+                JTextField CLCX1  = new JTextField("Semilla 1",16);
+                JTextField CLCX2  = new JTextField("Semilla 2",16);
+                JTextField CLCA1  = new JTextField("Multiplicador 1",16);
+                JTextField CLCA2  = new JTextField("Multiplicador 2",16);
+                JTextField CLCM1  = new JTextField("Módulo 1",16);
+                JTextField CLCM2  = new JTextField("Módulo 2",16);
+                JTextField CLCM3  = new JTextField("Módulo 3",16);
+                JTextField CLCN  = new JTextField("Iteraciones",16);
+                JButton CLCBack = new JButton("Regresar");
+
+                CLCBack.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        CLCFrame.setVisible(false);
+                        frame.setVisible(true);
+                    }
+                });
+
+                JButton CLCCalculate = new JButton("Consultar");
+                CLCCalculate.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        CLCFrame.setVisible(false);
+                        CLC.GenLinealComb(Float.parseFloat(CLCX1.getText()),
+                                Float.parseFloat(CLCX2.getText()),
+                                Float.parseFloat(CLCA1.getText()),
+                                Float.parseFloat(CLCA2.getText()),
+                                Float.parseFloat(CLCM1.getText()),
+                                Float.parseFloat(CLCM2.getText()),
+                                Float.parseFloat(CLCM3.getText()),
+                                Float.parseFloat(CLCN.getText()));
+
+                        JList CLCSeed1List;
+                        JList CLCSeed2List;
+                        JList CLCR1List;
+                        JList CLCR2List;
+                        JList CLCR1y2List;
+
+
+                        JFrame CLCRFrame = new JFrame("Congruencial Lineal Combinado");
+                        CLCRFrame.setSize(500, 250);
+                        CLCRFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                        JPanel CLCRPanel = new JPanel();
+                        JPanel CLCLPanel = new JPanel();
+                        CLCLPanel.setLayout(new GridLayout(1,6));
+                        CLCRPanel.setLayout(new BorderLayout());
+                        JLabel CLCSeed1Text;
+                        JLabel CLCSeed2Text;
+                        JLabel CLCR1Text;
+                        JLabel CLCR2Text;
+                        JLabel CLCR1y2Text;
+                        JButton GenMulRBack = new JButton("Regresar");
+
+
+                        GenMulRBack.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                CLC.generatedRandoms.clear();
+                                CLC.randomNumber2.clear();
+                                CLC.randomNumber1.clear();
+                                CLC.semilla2.clear();
+                                CLC.semilla1.clear();
+                                CLCRFrame.setVisible(false);
+                                frame.setVisible(true);
+                            }
+                        });
+
+
+                        CLCSeed1List = new JList(CLC.semilla1.toArray());
+                        CLCSeed2List = new JList(CLC.semilla2.toArray());
+                        CLCR1List = new JList(CLC.randomNumber1.toArray());
+                        CLCR2List = new JList(CLC.randomNumber2.toArray());
+                        CLCR1y2List = new JList(CLC.generatedRandoms.toArray());
+
+                        // OUTPUT
+
+                        //CLCRPanel.add(new JLabel("Los resultados son: "), BorderLayout.PAGE_START);
+                        CLCRPanel.add(CLCLPanel,BorderLayout.CENTER);
+                        CLCLPanel.add(new JLabel("S1:"));
+                        CLCLPanel.add(CLCSeed1List);
+                        CLCLPanel.add(new JLabel("S2:"));
+                        CLCLPanel.add(CLCSeed2List);
+                        CLCLPanel.add(new JLabel("R1:"));
+                        CLCLPanel.add(CLCR1List);
+                        CLCLPanel.add(new JLabel("R2:"));
+                        CLCLPanel.add(CLCR2List);
+                        CLCLPanel.add(new JLabel("R1 y 2:"));
+                        CLCLPanel.add(CLCR1y2List);
+                        CLCRPanel.add(CLCLPanel,BorderLayout.PAGE_END);
+                        CLCRFrame.add(CLCRPanel);
+
+                        CLCRFrame.setLocationRelativeTo(null);
+                        CLCRFrame.setVisible(true);
+                    }
+                });
+
+                CLCJp.add(CLCX1);
+                CLCJp.add(CLCX2);
+                CLCJp.add(CLCA1);
+                CLCJp.add(CLCA2);
+                CLCJp.add(CLCM1);
+                CLCJp.add(CLCM2);
+                CLCJp.add(CLCM3);
+                CLCJp.add(CLCN);
+                CLCJp.add(CLCCalculate);
+                CLCJp.add(CLCBack);
+                CLCFrame.setContentPane(CLCJp);
+                CLCFrame.setLocationRelativeTo(null);
+                CLCFrame.setVisible(true);
 
             }
         });
+
+
 
         jp.add(new JLabel(""));
         jp.add(new JLabel("Seleccione la metodología a usar:"));
