@@ -2,8 +2,6 @@ import org.apache.commons.math3.analysis.UnivariateFunction;
 import org.apache.commons.math3.analysis.integration.SimpsonIntegrator;
 import org.apache.commons.math3.analysis.integration.UnivariateIntegrator;
 import org.apache.commons.math3.distribution.ChiSquaredDistribution;
-import org.apache.commons.math3.distribution.KolmogorovSmirnovDistribution;
-import org.apache.commons.math3.stat.inference.ChiSquareTest;
 
 import java.util.*;
 

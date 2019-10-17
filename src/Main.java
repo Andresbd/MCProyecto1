@@ -170,7 +170,7 @@ public class Main {
                     public void actionPerformed(ActionEvent e) {
 
                         CL.CongLineal(Float.parseFloat(CLSeed.getText()),Float.parseFloat(CLMult.getText()),
-                                Float.parseFloat(CLInc.getText()),Float.parseFloat(CLMod.getText()),
+                                Float.parseFloat(CLInc.getText()),Math.abs(Float.parseFloat(CLMod.getText())),
                                         Float.parseFloat(CLIterations.getText()));
 
 
@@ -363,7 +363,7 @@ public class Main {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         CM.GenMix(Integer.parseInt(CMSeed.getText()),Integer.parseInt(CMMult.getText()),
-                                Integer.parseInt(CMInc.getText()),Integer.parseInt(CMMod.getText()),
+                                Integer.parseInt(CMInc.getText()),Math.abs(Integer.parseInt(CMMod.getText())),
                                 Integer.parseInt(CMIterations.getText()));
 
                         CMiFrame.setVisible(false);
@@ -483,7 +483,7 @@ public class Main {
                 });
 
                 CMBack = new JButton("Regresar");
-                CMCalculate.addActionListener(new ActionListener() {
+                CMBack.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         CMiFrame.setVisible(false);
@@ -564,7 +564,7 @@ public class Main {
 
                         GenMulFrame.setVisible(false);
                         GenMul.GenerarGenMult(Float.parseFloat(GenMulJtextSeed.getText()),
-                                Float.parseFloat(GenMulJtextMod.getText()),
+                                Math.abs(Float.parseFloat(GenMulJtextMod.getText())),
                                 Float.parseFloat(GenMulJtextValueA.getText()),
                                 Float.parseFloat(GenMulJtextItera.getText()));
 
@@ -718,9 +718,9 @@ public class Main {
                                 Float.parseFloat(CLCX2.getText()),
                                 Float.parseFloat(CLCA1.getText()),
                                 Float.parseFloat(CLCA2.getText()),
-                                Float.parseFloat(CLCM1.getText()),
-                                Float.parseFloat(CLCM2.getText()),
-                                Float.parseFloat(CLCM3.getText()),
+                                Math.abs(Float.parseFloat(CLCM1.getText())),
+                                Math.abs(Float.parseFloat(CLCM2.getText())),
+                                Math.abs(Float.parseFloat(CLCM3.getText())),
                                 Float.parseFloat(CLCN.getText()));
 
                         JList CLCSeed1List;
