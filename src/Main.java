@@ -1,3 +1,5 @@
+import org.apache.commons.math3.stat.inference.KolmogorovSmirnovTest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
     // write your code here
+
         MetodosCuadrados MC = new MetodosCuadrados();
         ChiCuadrada CH = new ChiCuadrada();
         CongruencialLineal CL = new CongruencialLineal();
