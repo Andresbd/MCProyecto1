@@ -199,7 +199,7 @@ public class Main {
                         CLRRi = new JList(CL.CLRandomRi.toArray());
 
                         if(CLChiTest) {
-                            CH.ChiTest(CL.CLAleatorio);
+                            CH.ChiTest(CL.CLRandomRi);
                             double CLTable = CH.ChiTable(Integer.parseInt(CLIterations.getText()), Double.parseDouble(CLAlpha.getText()));
                             CLChiTest = false;
                             CLCHi.setSelected(false);
@@ -217,7 +217,7 @@ public class Main {
                         }
 
                         if(CLSmirTest) {
-                            Kol.KolmogorovSmirnoffTest(CL.CLAleatorio);
+                            Kol.KolmogorovSmirnoffTest(CL.CLRandomRi);
                             double CLTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(CLIterations.getText()), Double.parseDouble(CLAlpha.getText()));
                             CLSmirTest = false;
                             CLSmir.setSelected(false);
@@ -392,7 +392,7 @@ public class Main {
                         CMRAle= new JList(CM.randomNumber.toArray());
 
                         if(CMChiTest) {
-                            CH.ChiTest(CM.randomNumber);
+                            CH.ChiTest(CM.generatedRandoms);
                             double CMTable = CH.ChiTable(Integer.parseInt(CMIterations.getText()), Double.parseDouble(CMAlpha.getText()));
                             CMChiTest = false;
                             CMCHi.setSelected(false);
@@ -410,7 +410,7 @@ public class Main {
                         }
 
                         if(CMSmirTest) {
-                            Kol.KolmogorovSmirnoffTest(CM.randomNumber);
+                            Kol.KolmogorovSmirnoffTest(CM.generatedRandoms);
                             double CMTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(CMIterations.getText()), Double.parseDouble(CMAlpha.getText()));
                             CMSmirTest = false;
                             CMSmir.setSelected(false);
@@ -606,7 +606,7 @@ public class Main {
                         GenMulRi = new JList(GenMul.GenMulRandomRi.toArray());
 
                         if(GenMulChiTest) {
-                            CH.ChiTest(GenMul.GenMulValueX);
+                            CH.ChiTest(GenMul.GenMulRandomRi);
                             double CLTable = CH.ChiTable(Integer.parseInt(GenMulJtextItera.getText()), Double.parseDouble(GenMulJtextAlpha.getText()));
                             GenMulChiTest = false;
                             GenMulCHi.setSelected(false);
@@ -624,7 +624,7 @@ public class Main {
                         }
 
                         if(GenMulSmirTest) {
-                            Kol.KolmogorovSmirnoffTest(GenMul.GenMulValueX);
+                            Kol.KolmogorovSmirnoffTest(GenMul.GenMulRandomRi);
                             double GenMulTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(GenMulJtextItera.getText()), Double.parseDouble(GenMulJtextAlpha.getText()));
                             GenMulSmirTest = false;
                             GenMulSmir.setSelected(false);
