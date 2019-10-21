@@ -96,7 +96,7 @@ public class ChiCuadrada {
         for(int i = 0; i < values.size(); i++) {
             FE[i] = integrator.integrate(100,f, start, end);
             start = values.get(i);
-            if(i < 4) {
+            if(i < values.size()-1) {
                 end = values.get(i+1);
             }
         }

@@ -25,9 +25,6 @@ public class GeneradorMultiplicativo{
             valorR = (float) valorUno / (float) (modulo - 1);
             semilla = valorUno;
 
-            System.out.println("Valor X" + i + ":" + valorUno);
-            System.out.println("Valor R" + i + ":" + valorR);
-
             GenMulValueX.add(valorUno);
             GenMulValueR.add(valorR);
             GenMulRandomRi.add(valorUno/modulo);

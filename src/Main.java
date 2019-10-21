@@ -88,9 +88,9 @@ public class Main {
                         MCRPanel.add(new JLabel("Los resultados son: "), BorderLayout.PAGE_START);
                         MCRPanel.add(MCLPanel,BorderLayout.CENTER);
                         MCLPanel.add(new JLabel("Semilla"));
-                        MCLPanel.add(MCSList);
+                        MCLPanel.add(new JScrollPane(MCSList));
                         MCLPanel.add(new JLabel("Ri"));
-                        MCLPanel.add(MCList);
+                        MCLPanel.add(new JScrollPane(MCList));
                         MCRPanel.add(MCRBack,BorderLayout.PAGE_END);
 
                         MCRFrame.add(MCRPanel);
@@ -199,7 +199,7 @@ public class Main {
                         CLRRi = new JList(CL.CLRandomRi.toArray());
 
                         if(CLChiTest) {
-                            CH.ChiTest(CL.CLRandomRi);
+                            CH.ChiTest(CL.CLAleatorio);
                             double CLTable = CH.ChiTable(Integer.parseInt(CLIterations.getText()), Double.parseDouble(CLAlpha.getText()));
                             CLChiTest = false;
                             CLCHi.setSelected(false);
@@ -217,7 +217,7 @@ public class Main {
                         }
 
                         if(CLSmirTest) {
-                            Kol.KolmogorovSmirnoffTest(CL.CLRandomRi);
+                            Kol.KolmogorovSmirnoffTest(CL.CLAleatorio);
                             double CLTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(CLIterations.getText()), Double.parseDouble(CLAlpha.getText()));
                             CLSmirTest = false;
                             CLSmir.setSelected(false);
@@ -265,11 +265,11 @@ public class Main {
                         CLRPanel.add(CLres,BorderLayout.PAGE_START);
                         CLRPanel.add(CLRLPanel,BorderLayout.CENTER);
                         CLRLPanel.add(CLSeed);
-                        CLRLPanel.add(CLRSeed);
+                        CLRLPanel.add(new JScrollPane(CLRSeed));
                         CLRLPanel.add(CLAle);
-                        CLRLPanel.add(CLRAle);
+                        CLRLPanel.add(new JScrollPane(CLRAle));
                         CLRLPanel.add(CLRi);
-                        CLRLPanel.add(CLRRi);
+                        CLRLPanel.add(new JScrollPane(CLRRi));
                         CLRPanel.add(CLPanelAbajo,BorderLayout.PAGE_END);
                         CLPanelAbajo.add(CLCHText);
                         CLPanelAbajo.add(CLSmirText);
@@ -392,7 +392,7 @@ public class Main {
                         CMRAle= new JList(CM.randomNumber.toArray());
 
                         if(CMChiTest) {
-                            CH.ChiTest(CM.generatedRandoms);
+                            CH.ChiTest(CM.randomNumber);
                             double CMTable = CH.ChiTable(Integer.parseInt(CMIterations.getText()), Double.parseDouble(CMAlpha.getText()));
                             CMChiTest = false;
                             CMCHi.setSelected(false);
@@ -410,7 +410,7 @@ public class Main {
                         }
 
                         if(CMSmirTest) {
-                            Kol.KolmogorovSmirnoffTest(CM.generatedRandoms);
+                            Kol.KolmogorovSmirnoffTest(CM.randomNumber);
                             double CMTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(CMIterations.getText()), Double.parseDouble(CMAlpha.getText()));
                             CMSmirTest = false;
                             CMSmir.setSelected(false);
@@ -463,11 +463,11 @@ public class Main {
                         CMUPanel.add(CMres,BorderLayout.PAGE_START);
                         CMUPanel.add(CMRPanel,BorderLayout.CENTER);
                         CMRPanel.add(CMSeed);
-                        CMRPanel.add(CMRSeed);
+                        CMRPanel.add(new JScrollPane(CMRSeed));
                         CMRPanel.add(CMAle);
-                        CMRPanel.add(CMRAle);
+                        CMRPanel.add(new JScrollPane(CMRAle));
                         CMRPanel.add(CMRi);
-                        CMRPanel.add(CMRRi);
+                        CMRPanel.add(new JScrollPane(CMRRi));
                         CMUPanel.add(CMDPanel,BorderLayout.PAGE_END);
                         CMDPanel.add(CMCHText);
                         CMDPanel.add(CMSmirText);
@@ -483,7 +483,7 @@ public class Main {
                 });
 
                 CMBack = new JButton("Regresar");
-                CMCalculate.addActionListener(new ActionListener() {
+                CMBack.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         CMiFrame.setVisible(false);
@@ -601,12 +601,12 @@ public class Main {
                             }
                         });
 
-                        GenMulXList = new JList(GenMul.GenMulValueX.toArray());
-                        GenMulRList = new JList(GenMul.GenMulValueR.toArray());
+                        GenMulXList = new JList(GenMul.GenMulSeed.toArray());
+                        GenMulRList = new JList(GenMul.GenMulValueX.toArray());
                         GenMulRi = new JList(GenMul.GenMulRandomRi.toArray());
 
                         if(GenMulChiTest) {
-                            CH.ChiTest(GenMul.GenMulRandomRi);
+                            CH.ChiTest(GenMul.GenMulValueX);
                             double CLTable = CH.ChiTable(Integer.parseInt(GenMulJtextItera.getText()), Double.parseDouble(GenMulJtextAlpha.getText()));
                             GenMulChiTest = false;
                             GenMulCHi.setSelected(false);
@@ -624,7 +624,7 @@ public class Main {
                         }
 
                         if(GenMulSmirTest) {
-                            Kol.KolmogorovSmirnoffTest(GenMul.GenMulRandomRi);
+                            Kol.KolmogorovSmirnoffTest(GenMul.GenMulValueX);
                             double GenMulTable = Kol.KolmogorovSmirnovTable(Integer.parseInt(GenMulJtextItera.getText()), Double.parseDouble(GenMulJtextAlpha.getText()));
                             GenMulSmirTest = false;
                             GenMulSmir.setSelected(false);
@@ -641,11 +641,11 @@ public class Main {
                         GenMulRPanel.add(new JLabel("Los resultados son: "), BorderLayout.PAGE_START);
                         GenMulRPanel.add(GenMulLPanel,BorderLayout.CENTER);
                         GenMulLPanel.add(new JLabel("Valor X:"));
-                        GenMulLPanel.add(GenMulXList);
+                        GenMulLPanel.add(new JScrollPane(GenMulXList));
                         GenMulLPanel.add(new JLabel("Valor R:"));
-                        GenMulLPanel.add(GenMulRList);
+                        GenMulLPanel.add(new JScrollPane(GenMulRList));
                         GenMulLPanel.add(new JLabel("Ri:"));
-                        GenMulLPanel.add(GenMulRi);
+                        GenMulLPanel.add(new JScrollPane(GenMulRi));
                         GenMulRPanel.add(GenMulAbajoPanel,BorderLayout.PAGE_END);
                         GenMulAbajoPanel.add(GenMulCHText);
                         GenMulAbajoPanel.add(GenMulSmirText);
@@ -771,15 +771,15 @@ public class Main {
                         //CLCRPanel.add(new JLabel("Los resultados son: "), BorderLayout.PAGE_START);
                         CLCRPanel.add(CLCLPanel,BorderLayout.CENTER);
                         CLCLPanel.add(new JLabel("S1:"));
-                        CLCLPanel.add(CLCSeed1List);
+                        CLCLPanel.add(new JScrollPane(CLCSeed1List));
                         CLCLPanel.add(new JLabel("S2:"));
-                        CLCLPanel.add(CLCSeed2List);
+                        CLCLPanel.add(new JScrollPane(CLCSeed2List));
                         CLCLPanel.add(new JLabel("R1:"));
-                        CLCLPanel.add(CLCR1List);
+                        CLCLPanel.add(new JScrollPane(CLCR1List));
                         CLCLPanel.add(new JLabel("R2:"));
-                        CLCLPanel.add(CLCR2List);
+                        CLCLPanel.add(new JScrollPane(CLCR2List));
                         CLCLPanel.add(new JLabel("R1 y 2:"));
-                        CLCLPanel.add(CLCR1y2List);
+                        CLCLPanel.add(new JScrollPane(CLCR1y2List));
                         CLCRPanel.add(CLCLPanel,BorderLayout.PAGE_END);
                         CLCRFrame.add(CLCRPanel);
 
